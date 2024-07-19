@@ -1,0 +1,45 @@
+.signInContainer{
+    background-color: springgreen;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.signInContainer form{
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 40px;
+    padding: 20px;
+    width: 550px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 1px 2px springgreen;
+}
+.signInContainer form input{
+    height: 60px;
+    border: none;
+    background-color: whitesmoke;
+    border-radius: 10px;
+
+}
+.signInContainer form header{
+    margin:24px auto;
+    text-decoration: underline;
+    font-size: 24px;
+}
+.signInContainer form button{
+    width: 120px;
+    height: 48px;
+    border: none;
+    margin: auto;
+
+}
+.signInContainer form button:hover{
+    background-color: springgreen;
+    color: white;
+    cursor: pointer;
+}

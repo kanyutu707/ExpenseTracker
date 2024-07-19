@@ -1,0 +1,16 @@
+.navigationContainer{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: lawngreen;
+    padding: 10px;
+    
+    
+}
+.navigationContainer span{
+    font-size: 22px;
+    font-weight: 540;
+    color: black;
+    cursor: pointer;
+}

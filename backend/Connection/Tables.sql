@@ -18,6 +18,7 @@ create table finances(
     description varchar(255),
     amount INT not null,
     user_id INT NOT NULL,
+    type varchar(255) NOT NULL,
     primary KEY(id),
     FOREIGN key (user_id) REFERENCEs users(id)
 );

@@ -1,0 +1,73 @@
+.indexContainer{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    
+}
+.indexContainer .heroSection{
+    background-color: springgreen;
+    height: 64vh;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+}
+.indexContainer .heroSection .details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 33px;
+    font-weight: 520;
+}
+.indexContainer .heroSection .details h4{
+    font-size: 27px;
+    font-weight: 100;
+    margin-top: 30px;
+}
+.indexContainer .heroSection img{
+    display: flex;
+    margin: auto;
+    background-color: white;
+    height: 86%;
+    width: 35%;
+  
+    box-shadow: 1px 2px 1px 2px springgreen;
+    rotate: 15deg;
+}
+.indexContainer .heroSection .details button{
+    background-color: whitesmoke;
+    border: none;
+    align-self: flex-start;
+    margin-top: 40px;
+    height: 55px;
+    width: 150px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+.indexContainer .services{
+    padding: 50px;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+.indexContainer .services header{
+    margin: auto;
+    font-size: 25px;
+    text-decoration: underline;
+}
+.indexContainer .services .servicesContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+.indexContainer .services .servicesContainer span{
+    background-color: springgreen;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

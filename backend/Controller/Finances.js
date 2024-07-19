@@ -2,13 +2,13 @@ const pool=require('../Connection/db');
 
 exports.createFinance=async(req, res)=>{
     try {
-        const{title, description, amount, user_id}=req.body;
+        const{title, description, amount, type, user_id}=req.body;
         const connection=await pool.getConnection();
         try {
-            const [result]=await connection.query("INSERT INTO finances (title, description, amount, user_id) VALUES (?, ?, ?, ?)", [title, description, amount, user_id]);
+            const [result]=await connection.query("INSERT INTO finances (title, description, amount, type, user_id) VALUES (?, ?, ?,?, ?)", [title, description, amount, type, user_id]);
             const id=result.insertId;
             connection.release();
-            res.status(201).json({id, title, description, amount});
+            res.status(201).json({id, title, description, amount, type});
         } catch (error) {
             connection.release();
             throw error;
@@ -37,8 +37,8 @@ exports.getAllFinances=async(req, res)=>{
 exports.getFinancesById=async(req, res)=>{
     const connection=await pool.getConnection();
     try {
-        const[id]=req.params;
-        const[finance]=await connection.query("SELECT * FROM finances WHERE id=?", [id]);
+        const{id}=req.params;
+        const[finance]=await connection.query("SELECT * FROM finances WHERE id = ?", [id]);
         connection.release();
         if(!finance.length){
             return res.status(404).json({error: "Finance not found"});
@@ -57,7 +57,7 @@ exports.updateFinance=async(req, res)=>{
         const{title, description, amount}=req.body;
         const connection=await pool.getConnection();
         try {
-            await connection.query("UPDATE finances SET title=?, description=?, amount=? WHERE id=?", [title, description, amount, id]);
+            await connection.query("UPDATE finances SET title=?, description=?, type=?, amount=? WHERE id=?", [title, description, type, amount, id]);
             connection.release();
             res.json({id, title, description, amount});
         } catch (error) {
