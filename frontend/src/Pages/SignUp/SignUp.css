@@ -49,3 +49,11 @@
     color: white;
     cursor: pointer;
 }
+@media screen and (max-width:550px) {
+    .signUpContainer form{
+        width: fit-content;
+    }
+    .signUpContainer form .input_group{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

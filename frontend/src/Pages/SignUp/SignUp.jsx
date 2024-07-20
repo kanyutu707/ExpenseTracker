@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './SignUp.css'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const SignUp = () => {
   const navigate=useNavigate();
@@ -29,7 +30,7 @@ const SignUp = () => {
         throw new Error('Network response was not ok')
       }
       const data=await response.json();
-      console.log(data);
+     
       navigate('/SignIn');
     } catch (error) {
       console.error('There was a problem with your fetch operation', error);
@@ -40,16 +41,16 @@ const SignUp = () => {
         <form onSubmit={handleSubmit}>
             <header>SIGN UP PAGE</header>
             <span className="input_group">
-                <input type="text" placeholder='FIRST NAME' onChange={handleChange} name='firstName' value={formData.firstName}/>
-                <input type="text" placeholder='LAST NAME' onChange={handleChange} name='lastName' value={formData.lastName}/>
+                <input type="text" placeholder='FIRST NAME' onChange={handleChange} name='firstName' value={formData.firstName} required/>
+                <input type="text" placeholder='LAST NAME' onChange={handleChange} name='lastName' value={formData.lastName} required/>
             </span>
             <span className='input_group'>
-                <input type="password" placeholder='PASSWORD' onChange={handleChange} name='password' value={formData.password} />
-                <input type="password" placeholder='CONFIRM PASSWORD' onChange={handleChange} name='password' value={formData.password}/>
+                <input type="password" placeholder='PASSWORD' onChange={handleChange} name='password' value={formData.password} required />
+                <input type="password" placeholder='CONFIRM PASSWORD' onChange={handleChange} name='password' value={formData.password} required/>
             </span>
-            <input type="email" placeholder='EMAIL' onChange={handleChange} name='email' value={formData.email}/>
+            <input type="email" placeholder='EMAIL' onChange={handleChange} name='email' value={formData.email} required/>
             <button type="submit">SUBMIT</button>
-        <a href="">LOGIN</a>
+            <Link to={'/SignIn'}>LOGIN</Link>
         </form>
         
     </div>

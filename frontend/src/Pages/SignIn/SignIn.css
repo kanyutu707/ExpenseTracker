@@ -43,3 +43,8 @@
     color: white;
     cursor: pointer;
 }
+@media screen and (max-width:550px) {
+    .signInContainer form{
+        width: fit-content;
+    }
+}

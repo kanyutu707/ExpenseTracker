@@ -28,11 +28,11 @@ const SignIn = () => {
       };
       const data=await response.json();
       const jwtToken=data.token;
-      console.log(jwtToken);
+      
       const parts=jwtToken.split('.');
 
       const payload=JSON.parse(atob(parts[1]));
-      console.log(payload);
+   
       sessionStorage.setItem('user_id', payload.user.id);
       sessionStorage.setItem('token', jwtToken);
       navigate('/Income');
@@ -45,10 +45,10 @@ const SignIn = () => {
     <div className='signInContainer'>
         <form onSubmit={handleSubmit}>
             <header>SIGN IN PAGE</header>
-            <input type="email" placeholder='EMAIL' onChange={handleChange} name='email' value={formData.email}/>
-            <input type="password" placeholder='PASSWORD' onChange={handleChange} name='password' value={formData.password}/>
+            <input type="email" placeholder='EMAIL' onChange={handleChange} name='email' value={formData.email} required/>
+            <input type="password" placeholder='PASSWORD' onChange={handleChange} name='password' value={formData.password} required/>
             <button>SUBMIT</button>
-            <a href="">REGISTER</a>
+            <Link to={'/SignUp'}>REGISTER</Link>
         </form>
     </div>
   )

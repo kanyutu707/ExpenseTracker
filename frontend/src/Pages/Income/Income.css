@@ -3,7 +3,7 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+
     flex-direction: column;
     padding-bottom: 30px;
 
@@ -17,6 +17,7 @@
     padding: 20px;
     background-color: white;
     box-shadow: 2px 4px 8px 4px springgreen;
+    margin-top: 70px;
 
 }
 .IncomeContainer h1 svg{
@@ -29,6 +30,7 @@
     grid-gap: 20px;
     width: 90%;
     box-shadow: 1px 2px 4px 2px springgreen;
+
 
 }
 .IncomeContainer .incomes h3{
@@ -89,4 +91,27 @@
 }
 .IncomeContainer .incomes header h3:first-child, .IncomeContainer .incomes span h4:first-child{
     border-left: none;
+}
+@media screen and (max-width:1500px) {
+    .IncomeContainer .incomes header, .IncomeContainer .incomes span{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .IncomeContainer .incomes .accessories{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width:1200px) {
+    .IncomeContainer .incomes header, .IncomeContainer .incomes span{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .IncomeContainer .incomes .accessories{
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
+}
+@media screen and (max-width:800px) {
+    .IncomeContainer .incomes header, .IncomeContainer .incomes span{
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
 }

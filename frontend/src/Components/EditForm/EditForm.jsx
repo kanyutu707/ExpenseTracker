@@ -15,7 +15,7 @@ const EditForm = ({close, type}) => {
     };
 
     const handleSubmit=async(e)=>{
-        console.log(formData);
+      
         e.preventDefault();
         try {
             const response=await fetch("http://localhost:3000/finances/", {
@@ -29,11 +29,12 @@ const EditForm = ({close, type}) => {
                 body:JSON.stringify(formData),
             })
             if(!response.ok){
-                console.log(response)
+              
                 throw new Error('Network response was not ok');
             }
             const data=await response.json();
             alert("Data submitted successfully");
+            window.location.href=window.location.href;
 
         } catch (error) {
           console.error("There was a problem with your post operation", error)   
@@ -50,15 +51,15 @@ const EditForm = ({close, type}) => {
             <header>EDIT FINANCES</header>
             <span className="input_group">
                 <label htmlFor="">TITLE</label>
-                <input type="text" placeholder='TITLE' onChange={handleChange} name='title' value={formData.title}/>
+                <input type="text" placeholder='TITLE' onChange={handleChange} name='title' value={formData.title} required/>
             </span>
             <span className="input_group">
                 <label htmlFor="">DESCRIPTION</label>
-                <textarea  placeholder='DESCRIPTION' onChange={handleChange} name='description' value={formData.description}></textarea>
+                <textarea  placeholder='DESCRIPTION' onChange={handleChange} name='description' value={formData.description} required></textarea>
             </span>
             <span className="input_group">
                 <label htmlFor="">AMOUNT</label>
-                <input type="number" placeholder='AMOUNT'  onChange={handleChange} name='amount' value={formData.amount}/>
+                <input type="number" placeholder='AMOUNT'  onChange={handleChange} name='amount' value={formData.amount} required/>
             </span>
             <button>SAVE</button>
         </form>

@@ -1,9 +1,10 @@
-.indexContainer{
+.indexContainer {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    
+
 }
-.indexContainer .heroSection{
+
+.indexContainer .heroSection {
     background-color: springgreen;
     height: 64vh;
     background-size: cover;
@@ -12,7 +13,8 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 40px;
 }
-.indexContainer .heroSection .details{
+
+.indexContainer .heroSection .details {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,22 +22,25 @@
     font-size: 33px;
     font-weight: 520;
 }
-.indexContainer .heroSection .details h4{
+
+.indexContainer .heroSection .details h4 {
     font-size: 27px;
     font-weight: 100;
     margin-top: 30px;
 }
-.indexContainer .heroSection img{
+
+.indexContainer .heroSection img {
     display: flex;
     margin: auto;
     background-color: white;
     height: 86%;
     width: 35%;
-  
+
     box-shadow: 1px 2px 1px 2px springgreen;
     rotate: 15deg;
 }
-.indexContainer .heroSection .details button{
+
+.indexContainer .heroSection .details button {
     background-color: whitesmoke;
     border: none;
     align-self: flex-start;
@@ -45,7 +50,8 @@
     margin-left: 10px;
     border-radius: 5px;
 }
-.indexContainer .services{
+
+.indexContainer .services {
     padding: 50px;
     height: 30vh;
     background-size: cover;
@@ -54,20 +60,34 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 }
-.indexContainer .services header{
+
+.indexContainer .services header {
     margin: auto;
     font-size: 25px;
     text-decoration: underline;
 }
-.indexContainer .services .servicesContainer{
+
+.indexContainer .services .servicesContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
 }
-.indexContainer .services .servicesContainer span{
+
+.indexContainer .services .servicesContainer span {
     background-color: springgreen;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media screen and (max-width:800px) {
+    .indexContainer .heroSection {
+        grid-template-columns: repeat(1, 1fr);
+        height: 96vh;
+    }
+
+    .indexContainer .services .servicesContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
